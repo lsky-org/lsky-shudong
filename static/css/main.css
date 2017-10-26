@@ -25,6 +25,7 @@ header span {
     margin-bottom: 30px;
 }
 .menu a {
+    position: relative;
     margin: auto 10px;
     padding: 5px 10px;
 }
@@ -53,6 +54,16 @@ header span {
     box-shadow: 0 10px 20px 5px rgba(23,28,33,0.06);
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
+}
+.active:after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    bottom: -6px;
+    transform: translate(-50%,0);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #01aaed;
 }
 .lk-panel-body {
     height: 100px;
