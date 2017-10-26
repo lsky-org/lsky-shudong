@@ -1,0 +1,46 @@
+.animated {
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+}
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    -moz-animation-name: fadeInDown;
+    -o-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+@-webkit-keyframes fadeIn{50%{opacity:.6}
+    100%{opacity:1}
+}
+@-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translateY(-20px)}
+    100%{opacity:1;-webkit-transform:translateY(0)}
+}
+@-moz-keyframes fadeInDown{0%{opacity:0;-moz-transform:translateY(-20px)}
+    100%{opacity:1;-moz-transform:translateY(0)}
+}
+@-o-keyframes fadeInDown{0%{opacity:0;-o-transform:translateY(-20px)}
+    100%{opacity:1;-o-transform:translateY(0)}
+}
+@keyframes fadeInDown{0%{opacity:0;transform:translateY(-20px)}
+    100%{opacity:1;transform:translateY(0)}
+}
+
+::selection{color:#fff;background:#207cc7}
+::-moz-selection{color:#fff;background:#207cc7;}
+:window-inactive {display: none;}
+::-webkit-scrollbar{width:5px;height:5px;}
+::-webkit-scrollbar-track{background:#ccc;}
+::-webkit-scrollbar-track:hover{background:#ff0;}
+::-webkit-scrollbar-track:window-inactive{background:#f6f6f6;}
+::-webkit-scrollbar-thumb{background:#888;}
+::-webkit-scrollbar-thumb:window-inactive{background:#f6f6f6;}
+::-webkit-scrollbar-thumb:hover{background:#666;}
+::-webkit-scrollbar-button {background:#333;}
+::-webkit-scrollbar-button:window-inactive {background:#f6f6f6;}
