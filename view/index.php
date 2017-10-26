@@ -19,9 +19,9 @@
         <span><i class="fa fa-send"></i></span>
     </header>
     <div class="menu">
-        <a class="active" data-json="{'action': 'index'}" href="">首页</a>
-        <a data-json="{'action': 'index'}" href="">实名</a>
-        <a data-json="{'action': 'index'}" href="">匿名</a>
+        <a id="index" class="active" data-json="{'action': 'index', 'type': 'index'}" href="">首页</a>
+        <a data-json="{'action': 'index', 'type': 'real_name'}" href="">实名</a>
+        <a data-json="{'action': 'index', 'type': 'anonymous'}" href="">匿名</a>
         <a data-json="{'action': 'send'}" href="">发表</a>
     </div>
     <div class="content">
@@ -29,7 +29,6 @@
     </div>
     <div class="mdui-dialog">
         <div class="mdui-dialog-content">
-            <!--<div class="mdui-dialog-title">标题</div>-->
             <span class="span"></span>
             <div class="dialog-footer"></div>
         </div>
@@ -41,33 +40,5 @@
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/mdui/0.3.0/js/mdui.min.js"></script>
     <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <script>
-        $(function() {
-            $('.content').load('', {'action': 'index'}, callback);
-            var menu = $('.menu a');
-            menu.click(function(e) {
-                e.preventDefault();
-                var obj = eval('(' + $(this).attr('data-json') + ')');
-                $('.content').load($(this).attr('href'), obj, callback);
-                menu.each(function() {
-                    $(this).removeClass('active');
-                });
-                $(this).addClass('active');
-            });
-            function callback() {
-                $('.article').click(function () {
-                    var inst = new mdui.Dialog('.mdui-dialog');
-                    $('.mdui-dialog-content span').html($(this).find('.lk-panel-body').text());
-                    $('.mdui-dialog-content .dialog-footer').html($(this).find('.lk-panel-foot').html());
-                    inst.open();
-                });
-            }
-        });
-        function msg(message) {
-            return mdui.snackbar({
-                message: message,
-                position: 'right-top'
-            });
-        }
-    </script>
+    <script src="./static/js/main.js"></script>
 </html>

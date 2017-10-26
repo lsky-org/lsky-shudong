@@ -36,12 +36,12 @@
             <div class="textfield">
                 <h2>是否匿名</h2>
                 <label class="mdui-radio">
-                    <input type="radio" value="1" name="anonymous" checked/>
+                    <input type="radio" value="1" name="is_anonymous" checked/>
                     <i class="mdui-radio-icon"></i>
                     是
                 </label>
                 <label class="mdui-radio">
-                    <input type="radio" value="0" name="anonymous" checked/>
+                    <input type="radio" value="0" name="is_anonymous" checked/>
                     <i class="mdui-radio-icon"></i>
                     否
                 </label>
@@ -54,12 +54,18 @@
     $('form').submit(function(e) {
         e.preventDefault();
         $.ajax({
-            url: '',
+            url: '?type=send',
             type: 'POST',
             data: $(this).serialize(),
             dataType: 'JSON',
             success: function(res) {
-
+                if(res.code) {
+                    msg(res.msg, function() {
+                        $('#index').click();
+                    });
+                } else {
+                    msg(res.msg);
+                }
             },
             error: function() {
                 msg('请求异常，请稍后重试');

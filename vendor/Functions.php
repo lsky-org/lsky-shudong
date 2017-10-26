@@ -73,3 +73,34 @@ function getIp($type = 0, $adv = false)
     $ip   = $long ? [$ip, $long] : ['0.0.0.0', 0];
     return $ip[$type];
 }
+
+/**
+ * 二维数组去空格
+ * @author WispX
+ * @date 2017-09-04 9:44
+ * @param array $array
+ * @return string|boolean
+ */
+function trimArray($array)
+{
+    if(count($array) > 0) {
+        foreach ($array as $key => &$val) {
+            $array[$key] = trim($val);
+        }
+        return $array;
+    }
+    return false;
+}
+
+/**
+ * 输出json数据
+ * @param $code 状态码
+ * @param $msg 状态信息
+ * @param array $data 额外数据
+ */
+function json($code, $msg, array $data = [])
+{
+    $result = ['code' => $code, 'msg' => $msg];
+    if(count($data) > 0) $result['data'] = $data;
+    echo json_encode($result);
+}
