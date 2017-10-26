@@ -63,5 +63,11 @@
                 });
             }
         });
+        function msg(message) {
+            return mdui.snackbar({
+                message: message,
+                position: 'right-top'
+            });
+        }
     </script>
 </html>

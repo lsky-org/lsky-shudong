@@ -97,6 +97,7 @@ header span {
     transition: all 0.5s;
 }
 .lk-panel-body span {
+    height: 100px;
     overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -120,6 +121,37 @@ header span {
     left: 65px;
     bottom: 8px;
 }
+.send textarea { resize: vertical; min-height: 100px; }
+.send input, .send textarea {
+    transition: border-color .35s;
+    width: 100%;
+    margin-bottom: 15px;
+    outline: none;
+    padding: 8px;
+    border: 1px solid #cbd5dd;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+.send input:focus, .send textarea:focus {
+    border-color: rgb(90,95,105);
+}
+.send h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 0.8em;
+    color: #5a5f69;
+    font-weight: normal;
+    position: relative;
+}
+.send h2:after {
+    content: " *";
+    top: -5px;
+    color: red;
+    font-size: 24px;
+    margin-left: 2px;
+    position: absolute;
+}
+.mdui-radio { padding-left: 23px; margin-right: 15px; }
 footer {
     margin-top: 50px;
     height: 50px;
