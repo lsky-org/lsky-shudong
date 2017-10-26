@@ -67,10 +67,10 @@
         <span><i class="fa fa-send"></i></span>
     </header>
     <div class="menu">
-        <a class="active" href="/">首页</a>
-        <a href="index.php?action=real">实名</a>
-        <a href="index.php?action=anonymous">匿名</a>
-        <a href="index.php?action=send">发表</a>
+        <a class="active" data-type="index" href="">首页</a>
+        <a data-type="real" href="">实名</a>
+        <a data-type="anonymous" href="">匿名</a>
+        <a data-type="send" href="">发表</a>
     </div>
     <div class="content animated fadeInDown">
 
@@ -86,7 +86,7 @@
         var menu = $('.menu a');
         menu.click(function(e) {
             e.preventDefault();
-            $('.content').load($(this).attr('href'));
+            $('.content').load($(this).attr('href'), {'action': $(this).attr('data-type')});
             menu.each(function() {
                 $(this).removeClass('active');
             });

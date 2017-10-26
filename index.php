@@ -11,6 +11,8 @@
 
 define('LSKY', 'LSKY');
 
+$action = isset($_POST['action']) ? $_POST['action'] : false;
+
 require './vendor/Functions.php';
 
 require './vendor/Query.php';
