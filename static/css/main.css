@@ -128,7 +128,7 @@ footer {
     text-align: center;
     border-top: 1px solid #f5f5f5;
 }
-.mdui-dialog-content {
+.mdui-dialog-content .dialog-footer {
     position: relative;
 }
 .mdui-dialog-content span {
@@ -137,14 +137,14 @@ footer {
 }
 .mdui-dialog-content p, .mdui-dialog-content cite {
     position: absolute;
-    right: 20px;
+    right: 0px;
     float: right;
 }
 .mdui-dialog-content p {
-    bottom: 40px;
+    top: -5px;
 }
 .mdui-dialog-content cite {
-    bottom: 25px;
+    top: 40px;
 }
 .mdui-dialog-content .dialog-footer {
     border-top: 1px solid #f0f0f0;
