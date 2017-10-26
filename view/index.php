@@ -19,12 +19,12 @@
         <span><i class="fa fa-send"></i></span>
     </header>
     <div class="menu">
-        <a class="active" data-type="index" href="">首页</a>
-        <a data-type="real" href="">实名</a>
-        <a data-type="anonymous" href="">匿名</a>
-        <a data-type="send" href="">发表</a>
+        <a class="active" data-json="{'action': 'index'}" href="">首页</a>
+        <a data-json="{'action': 'index'}" href="">实名</a>
+        <a data-json="{'action': 'index'}" href="">匿名</a>
+        <a data-json="{'action': 'send'}" href="">发表</a>
     </div>
-    <div class="content animated fadeInDown">
+    <div class="content">
 
     </div>
     <footer>
@@ -35,14 +35,18 @@
     <script src="https://cdn.bootcss.com/mdui/0.3.0/js/mdui.min.js"></script>
     <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <script>
-        var menu = $('.menu a');
-        menu.click(function(e) {
-            e.preventDefault();
-            $('.content').load($(this).attr('href'), {'action': $(this).attr('data-type')});
-            menu.each(function() {
-                $(this).removeClass('active');
+        $(function() {
+            $('.content').load('', {'action': 'index'});
+            var menu = $('.menu a');
+            menu.click(function(e) {
+                e.preventDefault();
+                var obj = eval('(' + $(this).attr('data-json') + ')');
+                $('.content').load($(this).attr('href'), obj);
+                menu.each(function() {
+                    $(this).removeClass('active');
+                });
+                $(this).addClass('active');
             });
-            $(this).addClass('active');
         });
     </script>
 </html>

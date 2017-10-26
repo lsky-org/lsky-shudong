@@ -8,6 +8,7 @@ header {
     line-height: 290px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 64, 128, .1);
+    -webkit-box-shadow: 0 2px 5px rgba(0, 64, 128, .1);
 }
 header span {
     font-size: 150px;
@@ -20,7 +21,8 @@ header span {
     line-height: 50px;
     background: #ffffff;
     box-shadow: 0px 1px 10px rgba(0, 64, 128, .1);
-    margin-bottom: 50px;
+    -webkit-box-shadow: 0px 1px 10px rgba(0, 64, 128, .1);
+    margin-bottom: 30px;
 }
 .menu a {
     margin: auto 10px;
@@ -32,19 +34,85 @@ header span {
     border-radius: 5px;
 }
 .panel {
+    margin-top: 15px;
     background: #fff;
     box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .1);
     padding: 20px;
     border-radius: 4px;
 }
+.article {
+    cursor: pointer;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 4px 9px 0 rgba(23,28,33,0.06);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.article:hover {
+    box-shadow: 0 10px 20px 5px rgba(23,28,33,0.06);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+.lk-panel-body {
+    height: 100px;
+    line-height: 20px;
+    margin-top: 15px;
+    color: #fff;
+    background: #5a5f69;
+    padding: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    -webkit-line-clamp: 4;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.lk-panel-foot {
+    position: relative;
+    height: 50px;
+    background: #fff;
+    padding: 5px;
+    color: #5a5f69;
+    font-size: 16px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, .1);
+}
+.lk-hover:hover {
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0px 6px 20px rgba(0, 0, 0, .1);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.boy { background: #66baff; }
+.girl { background: #f4a7b9; }
+.lk-panel-foot img {
+    float: left;
+    width: 50px;
+}
+.lk-panel-foot p {
+    position: absolute;
+    left: 60px;
+    bottom: 16px;
+}
+.lk-panel-foot cite {
+    position: absolute;
+    left: 60px;
+    bottom: 8px;
+}
 footer {
+    margin-top: 50px;
     height: 50px;
     line-height: 20px;
     background: #ffffff;
     text-align: center;
     border-top: 1px solid #f5f5f5;
 }
-
 .animated {
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;

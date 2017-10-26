@@ -18,7 +18,7 @@ require './vendor/Functions.php';
 require './vendor/Query.php';
 
 // 初始化数据库连接
-$db = new Query(
+/*$db = new Query(
     // mysql连接地址
     'localhost',
     // mysql连接用户名
@@ -31,6 +31,6 @@ $db = new Query(
     '3306',
     // mysql数据库编码
     'utf8'
-);
+);*/
 
-require './view/index.php';
+require "./view/". ($action ? "page/{$action}" : "index") . ".php";
