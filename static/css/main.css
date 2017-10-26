@@ -105,6 +105,7 @@ header span {
 }
 .boy { background: #66baff; }
 .girl { background: #f4a7b9; }
+.span { letter-spacing: 1px; }
 .author-img, .mdui-dialog-content .dialog-footer img {
     float: left;
     width: 50px;

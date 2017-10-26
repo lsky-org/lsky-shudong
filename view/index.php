@@ -30,7 +30,7 @@
     <div class="mdui-dialog">
         <div class="mdui-dialog-content">
             <!--<div class="mdui-dialog-title">标题</div>-->
-            <span></span>
+            <span class="span"></span>
             <div class="dialog-footer"></div>
         </div>
     </div>
