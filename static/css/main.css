@@ -67,7 +67,7 @@ header span {
 }
 .lk-panel-body {
     height: 100px;
-    line-height: 20px;
+    line-height: 26px;
     margin-top: 15px;
     color: #fff;
     background: #5a5f69;
@@ -100,7 +100,7 @@ header span {
     overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
 .boy { background: #66baff; }
