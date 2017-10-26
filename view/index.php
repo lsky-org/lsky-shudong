@@ -27,6 +27,13 @@
     <div class="content">
 
     </div>
+    <div class="mdui-dialog">
+        <div class="mdui-dialog-content">
+            <!--<div class="mdui-dialog-title">标题</div>-->
+            <span></span>
+            <div class="dialog-footer"></div>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2017 <a href="http://www.xlogs.cn" target="_blank">WispX</a> 皖ICP备16011445号</p>
     </footer>
@@ -36,17 +43,25 @@
     <script src="https://cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <script>
         $(function() {
-            $('.content').load('', {'action': 'index'});
+            $('.content').load('', {'action': 'index'}, callback);
             var menu = $('.menu a');
             menu.click(function(e) {
                 e.preventDefault();
                 var obj = eval('(' + $(this).attr('data-json') + ')');
-                $('.content').load($(this).attr('href'), obj);
+                $('.content').load($(this).attr('href'), obj, callback);
                 menu.each(function() {
                     $(this).removeClass('active');
                 });
                 $(this).addClass('active');
             });
+            function callback() {
+                $('.article').click(function () {
+                    var inst = new mdui.Dialog('.mdui-dialog');
+                    $('.mdui-dialog-content span').html($(this).find('.lk-panel-body').text());
+                    $('.mdui-dialog-content .dialog-footer').html($(this).find('.lk-panel-foot').html());
+                    inst.open();
+                });
+            }
         });
     </script>
 </html>

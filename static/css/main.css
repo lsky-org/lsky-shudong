@@ -102,7 +102,7 @@ header span {
 }
 .boy { background: #66baff; }
 .girl { background: #f4a7b9; }
-.lk-panel-foot img {
+.author-img, .mdui-dialog-content .dialog-footer img {
     float: left;
     width: 50px;
 }
@@ -123,6 +123,29 @@ footer {
     background: #ffffff;
     text-align: center;
     border-top: 1px solid #f5f5f5;
+}
+.mdui-dialog-content {
+    position: relative;
+}
+.mdui-dialog-content span {
+    line-height: 20px;
+    font-size: 18px;
+}
+.mdui-dialog-content p, .mdui-dialog-content cite {
+    position: absolute;
+    right: 20px;
+    float: right;
+}
+.mdui-dialog-content p {
+    bottom: 40px;
+}
+.mdui-dialog-content cite {
+    bottom: 25px;
+}
+.mdui-dialog-content .dialog-footer {
+    border-top: 1px solid #f0f0f0;
+    margin-top: 10px;
+    padding-top: 10px;
 }
 .animated {
     -webkit-animation-fill-mode: both;
@@ -163,10 +186,7 @@ footer {
 :window-inactive {display: none;}
 ::-webkit-scrollbar{width:5px;height:5px;}
 ::-webkit-scrollbar-track{background:#ccc;}
-::-webkit-scrollbar-track:hover{background:#ff0;}
 ::-webkit-scrollbar-track:window-inactive{background:#f6f6f6;}
 ::-webkit-scrollbar-thumb{background:#888;}
 ::-webkit-scrollbar-thumb:window-inactive{background:#f6f6f6;}
-::-webkit-scrollbar-thumb:hover{background:#666;}
-::-webkit-scrollbar-button {background:#333;}
 ::-webkit-scrollbar-button:window-inactive {background:#f6f6f6;}

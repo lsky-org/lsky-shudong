@@ -5,7 +5,7 @@
                 666
             </div>
             <div class="lk-panel-foot">
-                <img class="mdui-img-circle" src="/static/images/wms.jpg">
+                <img class="author-img mdui-img-circle" src="/static/images/wms.jpg">
                 <p>熊二哈</p>
                 <cite>2017-10-25 14:56</cite>
             </div>
@@ -17,7 +17,7 @@
                 666
             </div>
             <div class="lk-panel-foot">
-                <img class="mdui-img-circle" src="/static/images/wms.jpg">
+                <img class="author-img mdui-img-circle" src="/static/images/wms.jpg">
                 <p>熊二哈</p>
                 <cite>2017-10-25 14:56</cite>
             </div>
