@@ -72,10 +72,6 @@ header span {
     color: #fff;
     background: #5a5f69;
     padding: 10px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    word-break: break-all;
-    -webkit-line-clamp: 4;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -99,6 +95,13 @@ header span {
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
+}
+.lk-panel-body span {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 .boy { background: #66baff; }
 .girl { background: #f4a7b9; }
