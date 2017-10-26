@@ -14,54 +14,6 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/pace/1.0.2/themes/black/pace-theme-flash.min.css">
     <link rel="stylesheet" href="./static/css/main.css">
 </head>
-<style>
-    a, a:hover, a:focus, a:active { text-decoration: none; color: #333; }
-    a { -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all 0.2s; -o-transition: all 0.2s; transition: all 0.2s; }
-    body { background: #fcfcfd; }
-    header {
-        width: 100%;
-        background: #01aaed;
-        height: 300px;
-        line-height: 290px;
-        text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 64, 128, .1);
-    }
-    header span {
-        font-size: 150px;
-        color: #ffffff;
-        text-shadow: -5px 5px 0 rgba(0,0,0,.1);
-    }
-    .menu {
-        text-align: center;
-        height: 50px;
-        line-height: 50px;
-        background: #ffffff;
-        box-shadow: 0px 1px 10px rgba(0, 64, 128, .1);
-        margin-bottom: 50px;
-    }
-    .menu a {
-        margin: auto 10px;
-        padding: 5px 10px;
-    }
-    .menu a:hover, .menu a:focus, .menu a.active {
-        background: #01aaed;
-        color: #ffffff;
-        border-radius: 5px;
-    }
-    .panel {
-        background: #fff;
-        box-shadow: 0 0 8px rgba(0, 0, 0, .1);
-        padding: 20px;
-        border-radius: 4px;
-    }
-    footer {
-        height: 50px;
-        line-height: 20px;
-        background: #ffffff;
-        text-align: center;
-        border-top: 1px solid #f5f5f5;
-    }
-</style>
 <body>
     <header>
         <span><i class="fa fa-send"></i></span>
