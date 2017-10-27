@@ -36,9 +36,14 @@
     <footer>
         <p>&copy; 2017 <a href="http://www.xlogs.cn" target="_blank">WispX</a> 皖ICP备16011445号</p>
     </footer>
+    <!-- Loading -->
     <div class="loading-shade">
         <span></span>
     </div>
+    <!-- Back to the top -->
+    <button id="top" class="mdui-fab mdui-fab-hide mdui-color-blue mdui-fab-fixed mdui-ripple">
+        <i class="mdui-icon material-icons">&#xe5d8;</i>
+    </button>
 </body>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/mdui/0.3.0/js/mdui.min.js"></script>

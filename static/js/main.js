@@ -1,6 +1,15 @@
 /**
  * Created by WispX on 2017/10/26.
  */
+$(window).bind("scroll", function () {
+    var sTop = $(window).scrollTop();
+    var sTop = parseInt(sTop);
+    if(sTop < 50) {
+        $('#top').addClass('mdui-fab-hide');
+    } else {
+        $('#top').removeClass('mdui-fab-hide');
+    }
+});
 $(function() {
     loading(true);
     $('.content').load('', {'action': 'index'}, callback);
@@ -14,6 +23,9 @@ $(function() {
             $(this).removeClass('active');
         });
         $(this).addClass('active');
+    });
+    $('#top').click(function() {
+        $('html,body').animate({scrollTop: 0}, 600);
     });
 });
 function callback() {
