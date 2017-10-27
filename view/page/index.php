@@ -28,16 +28,3 @@
         <?php echo $pageno->showPages(); ?>
     </div>
 </div>
-<script>
-    // Page
-    $('.page a').click(function(e) {
-        e.preventDefault();
-        if($(this).hasClass('active')) {
-            return false;
-        }
-        loading(true);
-        $('.content').load($(this).attr('href'), {'action': 'index'}, function() {
-            loading(false);
-        });
-    });
-</script>
