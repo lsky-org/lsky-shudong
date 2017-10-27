@@ -44,7 +44,7 @@ switch ($post_type) {
         $total = $db->table('article')
             ->findNumRows();
         $list = $db->table('article')
-            ->order('id desc')
+            ->order('send_time desc')
             ->limit("{$page_now}, {$page_size}")
             ->select();
         break;
@@ -55,7 +55,7 @@ switch ($post_type) {
             ->findNumRows();
         $list = $db->table('article')
             ->where($where)
-            ->order('id desc')
+            ->order('send_time desc')
             ->limit("{$page_now}, {$page_size}")
             ->select();
         break;
@@ -66,7 +66,7 @@ switch ($post_type) {
             ->findNumRows();
         $list = $db->table('article')
             ->where($where)
-            ->order('id desc')
+            ->order('send_time desc')
             ->limit("{$page_now}, {$page_size}")
             ->select();
         break;
