@@ -66,8 +66,8 @@ if($get_type) {
                 return json(0, '数据异常');
             }
         }
-        if(mb_strlen($data['name']) <= 20 && mb_strlen($data['qq']) <= 10) {
-            if(is_numeric($data['qq'])) {
+        if(mb_strlen($data['name']) <= 20) {
+            if(is_numeric($data['qq']) && mb_strlen($data['qq']) <= 10) {
                 $data['ip'] = $ip;
                 $data['send_time'] = $time;
                 if($db->add($data, 'article')) {
