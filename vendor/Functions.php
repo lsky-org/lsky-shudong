@@ -115,3 +115,10 @@ function dd($data)
     echo var_dump($data);
     echo '</pre>';
 }
+
+/*function getPatternArray(array $data)
+{
+    foreach ($data as $item => &$value) {
+        $data[$item] = $value
+    }
+}*/

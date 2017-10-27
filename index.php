@@ -17,7 +17,7 @@ $get_type = isset($_GET['type']) ? $_GET['type'] : false;
 
 require './vendor/Functions.php';
 
-require './config.php';
+$config = require './config.php';
 
 require './vendor/Query.php';
 
