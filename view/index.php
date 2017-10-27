@@ -22,7 +22,7 @@
         <a id="index" class="active" data-json="{'action': 'index', 'type': 'index'}" href="">首页</a>
         <a data-json="{'action': 'index', 'type': 'real_name'}" href="">实名</a>
         <a data-json="{'action': 'index', 'type': 'anonymous'}" href="">匿名</a>
-        <a data-json="{'action': 'send'}" href="">发表</a>
+        <a id="send" data-json="{'action': 'send'}" href="">发表</a>
     </div>
     <div class="content">
 

@@ -198,6 +198,7 @@ a { -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all
 .boy { background: #66baff; }
 .girl { background: #f4a7b9; }
 .span { letter-spacing: 1px; word-wrap: break-word; }
+.text-center { text-align: center; }
 .loading-shade {
     position: fixed;
     display: none;

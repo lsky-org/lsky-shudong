@@ -31,7 +31,7 @@ require './vendor/Tool.php';
 require './vendor/Query.php';
 
 // 实例化数据库
-$db = new Query('test');
+$db = new Query(DB_NAME);
 
 // 每页显示数量
 $page_size = 10;
