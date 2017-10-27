@@ -14,11 +14,15 @@ define('LSKY', 'LSKY');
 $action = isset($_POST['action']) ? $_POST['action'] : false;
 $post_type = isset($_POST['type']) ? $_POST['type'] : 'index';
 $get_type = isset($_GET['type']) ? $_GET['type'] : false;
+$page = isset($_POST['page']) ? $_POST['page'] : 1;
 
 $config = require './config.php';
 
 // 静态操作类
 require './vendor/Operate.php';
+
+// 分页类
+require './vendor/Page.php';
 
 // 工具方法
 require './vendor/Tool.php';
@@ -29,30 +33,48 @@ require './vendor/Query.php';
 // 实例化数据库
 $db = new Query('test');
 
-// 设置数据表
-$db->table('article');
+// 每页显示数量
+$page_size = 10;
+
+// limit
+$page_now = ($page - 1) * $page_size;
 
 switch ($post_type) {
     case 'index':
-        $list = $db->order('id desc')
-            //->limit('0,3')
+        $total = $db->table('article')
+            ->findNumRows();
+        $list = $db->table('article')
+            ->order('id desc')
+            ->limit("{$page_now}, {$page_size}")
             ->select();
         break;
     case 'real_name':
-        $list = $db->where('is_anonymous = 0')
+        $where = "is_anonymous = 0";
+        $total = $db->table('article')
+            ->where($where)
+            ->findNumRows();
+        $list = $db->table('article')
+            ->where($where)
             ->order('id desc')
-            //->limit('0,3')
+            ->limit("{$page_now}, {$page_size}")
             ->select();
         break;
     case 'anonymous':
-        $list = $db->where('is_anonymous = 1')
+        $where = "is_anonymous = 1";
+        $total = $db->table('article')
+            ->where($where)
+            ->findNumRows();
+        $list = $db->table('article')
+            ->where($where)
             ->order('id desc')
-            //->limit('0,3')
+            ->limit("{$page_now}, {$page_size}")
             ->select();
         break;
     default:
         break;
 }
+
+$pageno = new Page($total, 3, $page, $page_size);
 
 if($get_type) {
     if($get_type == 'send') {

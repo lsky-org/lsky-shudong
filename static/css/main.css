@@ -13,6 +13,16 @@ header span {
     color: #ffffff;
     text-shadow: -5px 5px 0 rgba(0,0,0,.1);
 }
+header .active:after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    bottom: -6px;
+    transform: translate(-50%,0);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #01aaed;
+}
 .menu {
     text-align: center;
     height: 50px;
@@ -52,16 +62,6 @@ header span {
     box-shadow: 0 10px 20px 5px rgba(23,28,33,0.06);
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
-}
-.active:after {
-    position: absolute;
-    content: '';
-    left: 50%;
-    bottom: -6px;
-    transform: translate(-50%,0);
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #01aaed;
 }
 .lk-panel-body {
     height: 100px;
