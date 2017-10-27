@@ -52,7 +52,7 @@ if($get_type) {
     if($get_type == 'send') {
         $ip = getIp();
         $time = time();
-        $count = $db->table('article')->where('send_time > ' . strtotime(date('Y-m-d', $time)))->select();
+        $count = count($db->table('article')->where('send_time > ' . strtotime(date('Y-m-d', $time)))->select());
         if($count >= 3) {
             return json(2, '每天只能发表3个悄悄话哦！明天再来吧！');
         }
