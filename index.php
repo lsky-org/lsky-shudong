@@ -67,12 +67,15 @@ if($get_type) {
             }
         }
         if(mb_strlen($data['name']) <= 20 && mb_strlen($data['qq']) <= 10) {
-            $data['ip'] = $ip;
-            $data['send_time'] = $time;
-            if($db->add($data, 'article')) {
-                return json(1, '发布成功');
+            if(is_numeric($data['qq'])) {
+                $data['ip'] = $ip;
+                $data['send_time'] = $time;
+                if($db->add($data, 'article')) {
+                    return json(1, '发布成功');
+                }
+                return json(0, '发布失败');
             }
-            return json(0, '发布失败');
+            return json(0, 'QQ格式不正确');
         }
         return json(0, '数据异常');
     }
