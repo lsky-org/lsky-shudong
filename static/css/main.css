@@ -13,7 +13,7 @@ header span {
     color: #ffffff;
     text-shadow: -5px 5px 0 rgba(0,0,0,.1);
 }
-header .active:after {
+.menu .active:after {
     position: absolute;
     content: '';
     left: 50%;
