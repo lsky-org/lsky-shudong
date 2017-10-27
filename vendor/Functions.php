@@ -116,9 +116,15 @@ function dd($data)
     echo '</pre>';
 }
 
-/*function getPatternArray(array $data)
+/**
+ * 替换关键字为正则格式
+ * @param array $data
+ * @return array
+ */
+function getPatternArray(array $data)
 {
     foreach ($data as $item => &$value) {
-        $data[$item] = $value
+        $data[$item] = '/' . addslashes($value) . '/';
     }
-}*/
+    return $data;
+}
