@@ -2,10 +2,12 @@
  * Created by WispX on 2017/10/26.
  */
 $(function() {
+    loading(true);
     $('.content').load('', {'action': 'index'}, callback);
     var menu = $('.menu a');
     menu.click(function(e) {
         e.preventDefault();
+        loading(true);
         var obj = eval('(' + $(this).attr('data-json') + ')');
         $('.content').load($(this).attr('href'), obj, callback);
         menu.each(function() {
@@ -14,6 +16,7 @@ $(function() {
         $(this).addClass('active');
     });
     function callback() {
+        loading(false);
         $('.article').click(function () {
             var inst = new mdui.Dialog('.mdui-dialog');
             $('.mdui-dialog-content span').html($(this).find('.lk-panel-body').html());
@@ -30,4 +33,10 @@ function msg(message, callback) {
 
         },
     });
+}
+function loading(bool) {
+    if(bool) {
+        return $('.loading-shade').show();
+    }
+    return $('.loading-shade').hide();
 }
