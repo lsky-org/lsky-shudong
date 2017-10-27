@@ -1,3 +1,4 @@
+<?php defined('LSKY') or die('Illegal access!');?>
 <div class="fadeInDown animated mdui-container panel send">
     <form action="" method="post">
         <div class="mdui-col-md-8 mdui-col-sm-8">
@@ -46,6 +47,7 @@
                     否
                 </label>
             </div>
+            <p>请勿发布违反中国大陆和香港法律的言论，违者后果自负。</p>
             <button type="submit" id="send" class="mdui-btn mdui-btn-raised mdui-ripple mdui-btn-block">悄悄地发布</button>
         </div>
     </form>

@@ -1,4 +1,4 @@
-<?php
+<?php defined('LSKY') or die('Illegal access!');
 
 /**
  * Class Query

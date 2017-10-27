@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/pace/1.0.2/themes/black/pace-theme-flash.min.css">
     <link rel="stylesheet" href="./static/css/main.css">
 </head>
-<body>
+<body class="mdui-theme-accent-blue">
     <header>
         <span><i class="fa fa-send"></i></span>
     </header>
