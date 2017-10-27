@@ -126,11 +126,12 @@ class Operate
      * 过滤关键字，并替换为*
      * @param $content 要过滤的内容
      * @param array $blacklist 关键字，一维数组
+     * @param $replace_str 替换的符号
      * @return mixed
      */
-    public static function filter($content, array $blacklist)
+    public static function filter($content, array $blacklist, $replace_str = '*')
     {
-        return preg_replace(self::getPatternArray($blacklist), '*', $content);
+        return preg_replace(self::getPatternArray($blacklist), $replace_str, $content);
     }
 
 }

@@ -63,9 +63,9 @@ if($get_type) {
             return Operate::json(2, '每天只能发表3个悄悄话哦！明天再来吧！');
         }
         $data = Operate::trimArray($_POST);
-        // 处理数据  防注入
+        // 处理数据  过滤字符串、防注入
         foreach ($data as $item => &$value) {
-            $data[$item] = addslashes($value);
+            $data[$item] = Operate::filter(addslashes($value), $config['blacklist']);
             // 判断是否有字段为空，否则直接退出
             if(empty($data[$item])) {
                 break;
