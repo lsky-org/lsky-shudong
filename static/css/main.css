@@ -1,5 +1,3 @@
-a, a:hover, a:focus, a:active { text-decoration: none; color: #333; }
-a { -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all 0.2s; -o-transition: all 0.2s; transition: all 0.2s; }
 body { background: #fcfcfd; }
 header {
     width: 100%;
@@ -104,9 +102,7 @@ header span {
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
-.boy { background: #66baff; }
-.girl { background: #f4a7b9; }
-.span { letter-spacing: 1px; }
+
 .author-img, .mdui-dialog-content .dialog-footer img {
     float: left;
     width: 50px;
@@ -160,9 +156,7 @@ footer {
     text-align: center;
     border-top: 1px solid #f5f5f5;
 }
-.mdui-dialog-content .dialog-footer {
-    position: relative;
-}
+.mdui-dialog-content .dialog-footer { position: relative; }
 .mdui-dialog-content span {
     line-height: 20px;
     font-size: 18px;
@@ -172,17 +166,18 @@ footer {
     right: 0px;
     float: right;
 }
-.mdui-dialog-content p {
-    top: -5px;
-}
-.mdui-dialog-content cite {
-    top: 40px;
-}
+.mdui-dialog-content p { top: -5px; }
+.mdui-dialog-content cite { top: 40px; }
 .mdui-dialog-content .dialog-footer {
     border-top: 1px solid #f0f0f0;
     margin-top: 10px;
     padding-top: 10px;
 }
+a, a:hover, a:focus, a:active { text-decoration: none; color: #333; }
+a { -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all 0.2s; -o-transition: all 0.2s; transition: all 0.2s; }
+.boy { background: #66baff; }
+.girl { background: #f4a7b9; }
+.span { letter-spacing: 1px; word-wrap: break-word; }
 .animated {
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;

@@ -51,12 +51,19 @@ switch ($post_type) {
 if($get_type) {
     if($get_type == 'send') {
         $data = trimArray($_POST);
-        $data['ip'] = getIp();
-        $data['send_time'] = time();
-        if($db->add($data, 'article')) {
-            return json(1, '发布成功');
+        // 处理数据  防注入
+        foreach ($data as $item => &$value) {
+            $data[$item] = addslashes($value);
         }
-        return json(0, '发布失败');
+        if(mb_strlen($data['name']) <= 20 && mb_strlen($data['qq']) <= 10) {
+            $data['ip'] = getIp();
+            $data['send_time'] = time();
+            if($db->add($data, 'article')) {
+                return json(1, '发布成功');
+            }
+            return json(0, '发布失败');
+        }
+        return json(0, '数据异常');
     }
 }
 

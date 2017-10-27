@@ -12,12 +12,12 @@
                     break;
             } ?>">
                 <span class="span">
-                    <?php echo $value['content'] ?>
+                    <?php echo htmlspecialchars($value['content']) ?>
                 </span>
             </div>
             <div class="lk-panel-foot">
                 <img class="author-img mdui-img-circle" src="<?php echo $value['is_anonymous'] ? '/static/images/wms.jpg' : "https://avatar.mixcm.cn/qq/{$value['qq']}" ?>">
-                <p><?php echo $value['is_anonymous'] ? '匿名' : $value['name'] ?></p>
+                <p><?php echo $value['is_anonymous'] ? '匿名' : htmlspecialchars($value['name']) ?></p>
                 <cite mdui-tooltip="{'content': '<?php echo date('Y-m-d h:i:s', $value['send_time']) ?>'}"><?php echo formatTime($value['send_time']) ?></cite>
             </div>
         </div>

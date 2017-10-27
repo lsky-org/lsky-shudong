@@ -16,7 +16,7 @@ $(function() {
     function callback() {
         $('.article').click(function () {
             var inst = new mdui.Dialog('.mdui-dialog');
-            $('.mdui-dialog-content span').html($(this).find('.lk-panel-body').text());
+            $('.mdui-dialog-content span').html($(this).find('.lk-panel-body').html());
             $('.mdui-dialog-content .dialog-footer').html($(this).find('.lk-panel-foot').html());
             inst.open();
         });

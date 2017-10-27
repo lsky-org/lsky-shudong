@@ -7,11 +7,11 @@
             </div>
             <div class="textfield">
                 <h2>名称</h2>
-                <input type="text" name="name" placeholder="你的名字" autocomplete="off" required>
+                <input type="text" name="name" placeholder="你的名字(20个字符)" autocomplete="off" required maxlength="20">
             </div>
             <div class="textfield">
                 <h2>QQ</h2>
-                <input type="text" name="qq" placeholder="用于显示头像" autocomplete="off" required>
+                <input type="text" name="qq" placeholder="用于显示头像" autocomplete="off" required maxlength="10">
             </div>
         </div>
         <div class="mdui-col-md-4 mdui-col-sm-4">
