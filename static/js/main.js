@@ -8,7 +8,7 @@ $(function() {
     menu.click(function(e) {
         e.preventDefault();
         loading(true);
-        var obj = eval('(' + $(this).attr('data-json') + ')');
+        var obj = getStrToJson($(this).attr('data-json'));
         $('.content').load($(this).attr('href'), obj, callback);
         menu.each(function() {
             $(this).removeClass('active');
@@ -30,7 +30,9 @@ function callback() {
             return false;
         }
         loading(true);
-        $('.content').load($(this).attr('href'), {'action': 'index'}, function() {
+        // 获取当前导航位置
+        var obj = getStrToJson($('.menu a.active').attr('data-json'));
+        $('.content').load($(this).attr('href'), obj, function() {
             loading(false);
             callback();
         });
@@ -50,4 +52,7 @@ function loading(bool) {
         return $('.loading-shade').show();
     }
     return $('.loading-shade').hide();
+}
+function getStrToJson(str) {
+    return eval('(' + str + ')');
 }
