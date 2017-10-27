@@ -104,3 +104,14 @@ function json($code, $msg, array $data = [])
     if(count($data) > 0) $result['data'] = $data;
     echo json_encode($result);
 }
+
+/**
+ * 打印数据
+ * @param $data
+ */
+function dd($data)
+{
+    echo '<pre>';
+    echo var_dump($data);
+    echo '</pre>';
+}

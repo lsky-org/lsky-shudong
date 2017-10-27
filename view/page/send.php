@@ -59,10 +59,12 @@
             data: $(this).serialize(),
             dataType: 'JSON',
             success: function(res) {
-                if(res.code) {
+                if(res.code == 1) {
                     msg(res.msg, function() {
                         $('#index').click();
                     });
+                } else if (res.code == 2) {
+                    mdui.alert(res.msg);
                 } else {
                     msg(res.msg);
                 }
