@@ -34,7 +34,7 @@ require './vendor/Query.php';
 $db = new Query(DB_NAME);
 
 // 每页显示数量
-$page_size = 10;
+$page_size = 12;
 
 // limit
 $page_now = ($page - 1) * $page_size;
