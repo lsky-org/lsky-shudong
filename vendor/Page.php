@@ -87,7 +87,7 @@ class Page
             $_GET['page'] = $k;
             $is = $this->currPage == $k;
             $active = $is ? ' class="active"' : '';
-            $pageStr .= "<a{$active} href=\"" . ($is ? 'javascript:void(0)' : $v) . "\">{$k}</a>";
+            $pageStr .= "<a{$active} href=\"" . ($is ? '####' : $v) . "\">{$k}</a>";
 
         }
         //如果当前页小于总页数就显示下一页

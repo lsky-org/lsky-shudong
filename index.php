@@ -14,7 +14,7 @@ define('LSKY', 'LSKY');
 $action = isset($_POST['action']) ? $_POST['action'] : false;
 $post_type = isset($_POST['type']) ? $_POST['type'] : 'index';
 $get_type = isset($_GET['type']) ? $_GET['type'] : false;
-$page = isset($_POST['page']) ? $_POST['page'] : 1;
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 $config = require './config.php';
 

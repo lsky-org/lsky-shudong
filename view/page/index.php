@@ -24,29 +24,20 @@
         </div>
     </div>
     <?php } ?>
-    <style>
-        .page {
-            clear: both;
-            padding-top: 25px;
-            text-align: center;
-        }
-        .page a {
-            margin: 0 4px;
-            padding: 7px 14px;
-            border-radius: 4px;
-            display: inline-block;
-            line-height: 18px;
-            color: #2196F3;
-            background: #E3F2FD;
-        }
-        .page a:hover, .page a.active {
-            color: #ffffff;
-            background: #2196F3;
-            box-shadow: 0 0 8px #42A5F5;
-        }
-        .page a.active { cursor: not-allowed; }
-    </style>
     <div class="page">
         <?php echo $pageno->showPages(); ?>
     </div>
 </div>
+<script>
+    // Page
+    $('.page a').click(function(e) {
+        e.preventDefault();
+        if($(this).hasClass('active')) {
+            return false;
+        }
+        loading(true);
+        $('.content').load($(this).attr('href'), {'action': 'index'}, function() {
+            loading(false);
+        });
+    });
+</script>
