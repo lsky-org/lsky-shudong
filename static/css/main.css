@@ -246,12 +246,26 @@ a { -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all
 }
 .face-fixed {
     position: absolute;
+    overflow-y: auto;
+    width: 470px;
     z-index: 1;
     background: #fff;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0px 3px 20px 0px rgba(0, 64, 128, 0.3);
     -webkit-box-shadow: 0px 3px 20px 0px rgba(0, 64, 128, 0.3);
+}
+.face-fixed a {
+    transition: background .35s;
+    cursor: pointer;
+    padding: 4px;
+    height: 30px;
+    width: 30px;
+    border-radius: 4px;
+    display: inline-block;
+}
+.face-fixed a:hover {
+    background-color: rgba(153, 153, 153, 0.2);
 }
 .animated {
     -webkit-animation-fill-mode: both;
@@ -288,6 +302,10 @@ a { -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all
 }
 @keyframes sider-fixed {
     0% { transform: translateY(30px); opacity:0; }
+}
+
+@media screen and (max-width: 768px) {
+    .face-fixed { width: 250px; max-height: 250px; }
 }
 
 ::selection{color:#fff;background:#207cc7}

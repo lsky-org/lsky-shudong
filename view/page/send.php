@@ -1,17 +1,22 @@
-<?php defined('LSKY') or die('Illegal access!');?>
+<?php defined('LSKY') or die('Illegal access!'); ?>
 <div class="fadeInDown animated mdui-container panel send">
     <form action="" method="post">
         <div class="mdui-col-md-8 mdui-col-sm-8">
             <div class="textfield">
                 <h2>你想说的话</h2>
-                <textarea rows="5" name="content" placeholder="你想说的话" required></textarea>
+                <textarea rows="5" id="content" name="content" placeholder="你想说的话" required></textarea>
                 <div class="kind">
                     <div class="face">
                         <a class="mdui-typo-caption-opacity mdui-ripple" href="javascript:void(0)">
                             <i class="mdui-icon material-icons">&#xe24e;</i>
                         </a>
                         <div class="face-fixed face-fade none">
-                            woqu1
+                            <?php foreach ($config['face'] as $value) { ?>
+                                <a data-value="{face:<?php echo $value ?>}" title="<?php echo $value ?>"
+                                   href="javascript:void(0)">
+                                    <img src="./static/images/face/<?php echo $value ?>.png">
+                                </a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -62,13 +67,3 @@
         </div>
     </form>
 </div>
-<script>
-    $('.kind div').hover(function() {
-        var div = $(this).find('div');
-        if(div.hasClass('none')) {
-            div.removeClass('none');
-        } else {
-            div.addClass('none');
-        }
-    });
-</script>
