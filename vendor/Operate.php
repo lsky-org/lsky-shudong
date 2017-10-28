@@ -134,4 +134,19 @@ class Operate
         return preg_replace(self::getPatternArray($blacklist), $replace_str, $content);
     }
 
+    /**
+     * 正则替换表情
+     * @param array $face 一维数组
+     * @param $content 要替换的内容
+     * @return mixed
+     */
+    public static function face(array $face, $content)
+    {
+        foreach ($face as $item => $value) {
+            $pattern_array[] = '/\{face\s*:\s*' . $value . '\s*\}/is';
+            $replace_array[] = '<img class="face" title="' . $value . '" src="./static/images/face/' . $value . '.png"/>';
+        }
+        return preg_replace($pattern_array, $replace_array, $content);
+    }
+
 }
