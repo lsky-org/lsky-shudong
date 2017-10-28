@@ -57,9 +57,3 @@
         </div>
     </form>
 </div>
-<div class="face-fixed">
-    66666666666卧槽
-</div>
-<script>
-
-</script>
