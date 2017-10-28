@@ -5,6 +5,11 @@
             <div class="textfield">
                 <h2>你想说的话</h2>
                 <textarea rows="5" name="content" placeholder="你想说的话" required></textarea>
+                <div class="kind">
+                    <a class="mdui-typo-caption-opacity" href="javascript:void(0)">
+                        <i class="mdui-icon material-icons">&#xe24e;</i>
+                    </a>
+                </div>
             </div>
             <div class="textfield">
                 <h2>名称</h2>
@@ -52,28 +57,9 @@
         </div>
     </form>
 </div>
+<div class="face-fixed">
+    66666666666卧槽
+</div>
 <script>
-    $('form').submit(function(e) {
-        e.preventDefault();
-        $.ajax({
-            url: '?type=send',
-            type: 'POST',
-            data: $(this).serialize(),
-            dataType: 'JSON',
-            success: function(res) {
-                if(res.code == 1) {
-                    msg(res.msg, function() {
-                        $('#index').click();
-                    });
-                } else if (res.code == 2) {
-                    mdui.alert(res.msg);
-                } else {
-                    msg(res.msg);
-                }
-            },
-            error: function() {
-                msg('请求异常，请稍后重试');
-            }
-        });
-    });
+
 </script>

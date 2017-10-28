@@ -50,6 +50,29 @@ function callback() {
         });
     });
 }
+$('form').submit(function(e) {
+    e.preventDefault();
+    $.ajax({
+        url: '?type=send',
+        type: 'POST',
+        data: $(this).serialize(),
+        dataType: 'JSON',
+        success: function(res) {
+            if(res.code == 1) {
+                msg(res.msg, function() {
+                    $('#index').click();
+                });
+            } else if (res.code == 2) {
+                mdui.alert(res.msg);
+            } else {
+                msg(res.msg);
+            }
+        },
+        error: function() {
+            msg('请求异常，请稍后重试');
+        }
+    });
+});
 function msg(message, callback) {
     return mdui.snackbar({
         message: message,

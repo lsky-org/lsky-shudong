@@ -122,7 +122,6 @@ header span {
 .send input, .send textarea {
     transition: border-color .35s;
     width: 100%;
-    margin-bottom: 15px;
     outline: none;
     padding: 8px;
     border: 1px solid #cbd5dd;
@@ -177,7 +176,10 @@ footer {
     text-align: center;
     border-top: 1px solid #f5f5f5;
 }
-.face {
+.textfield {
+    margin-bottom: 15px;
+}
+.face-o {
     margin: -5px 0 -9px 0!important;
     height: 30px;
     width: 30px;

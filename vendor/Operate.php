@@ -144,7 +144,7 @@ class Operate
     {
         foreach ($face as $item => $value) {
             $pattern_array[] = '/\{face\s*:\s*' . $value . '\s*\}/is';
-            $replace_array[] = '<img class="face" title="' . $value . '" src="./static/images/face/' . $value . '.png"/>';
+            $replace_array[] = '<img class="face-o" title="' . $value . '" src="./static/images/face/' . $value . '.png"/>';
         }
         return preg_replace($pattern_array, $replace_array, $content);
     }
