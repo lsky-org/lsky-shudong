@@ -80,7 +80,7 @@ if($get_type) {
     if($get_type == 'send') {
         $ip = Operate::getIp();
         $time = time();
-        $count = count($db->table('article')->where('send_time > ' . strtotime(date('Y-m-d', $time)))->select());
+        $count = count($db->table('article')->where("ip = '{$ip}' AND " . 'send_time > ' . strtotime(date('Y-m-d', $time)))->select());
         if($count >= 3) {
             return Operate::json(2, '每天只能发表3个悄悄话哦！明天再来吧！');
         }
