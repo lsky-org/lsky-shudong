@@ -6,9 +6,14 @@
                 <h2>你想说的话</h2>
                 <textarea rows="5" name="content" placeholder="你想说的话" required></textarea>
                 <div class="kind">
-                    <a class="mdui-typo-caption-opacity" href="javascript:void(0)">
-                        <i class="mdui-icon material-icons">&#xe24e;</i>
-                    </a>
+                    <div class="face">
+                        <a class="mdui-typo-caption-opacity mdui-ripple" href="javascript:void(0)">
+                            <i class="mdui-icon material-icons">&#xe24e;</i>
+                        </a>
+                        <div class="face-fixed face-fade none">
+                            woqu1
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="textfield">
@@ -57,3 +62,13 @@
         </div>
     </form>
 </div>
+<script>
+    $('.kind div').hover(function() {
+        var div = $(this).find('div');
+        if(div.hasClass('none')) {
+            div.removeClass('none');
+        } else {
+            div.addClass('none');
+        }
+    });
+</script>
