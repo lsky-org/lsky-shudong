@@ -68,8 +68,8 @@ header span {
     line-height: 26px;
     margin-top: 15px;
     color: #fff;
+    padding: 10px;
     background: #5a5f69;
-    /*padding: 10px;*/
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -96,7 +96,6 @@ header span {
 }
 .lk-panel-body span {
     height: 100px;
-    padding: 10px;
     overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -180,7 +179,7 @@ footer {
     margin-bottom: 15px;
 }
 .face-o {
-    margin: -5px 0 -9px 0!important;
+    margin: 0px 0 -9px 0!important;
     height: 30px;
     width: 30px;
     border: none!important;

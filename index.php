@@ -109,5 +109,5 @@ if($get_type) {
     }
 }
 
-// 加载试图
+// 加载视图
 require "./view/". ($action ? "page/{$action}" : "index") . ".php";
