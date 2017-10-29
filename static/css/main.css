@@ -305,6 +305,7 @@ a { -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all
 
 @media screen and (max-width: 768px) {
     .face-fixed { width: 250px; max-height: 250px; }
+    .page a, .page a:focus { margin: 0 3px; padding: 4px 9px; }
 }
 
 ::selection{color:#fff;background:#207cc7}

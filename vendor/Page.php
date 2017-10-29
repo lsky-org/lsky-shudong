@@ -81,7 +81,7 @@ class Page
         if ($this->currPage > 1) {
             $_GET['page'] = $this->currPage - 1;
             $syUrl = $this->href . '?' . http_build_query($_GET);
-            $pageStr .= "<a href=\"{$syUrl}\">上一页</a>";
+            $pageStr .= "<a href=\"{$syUrl}\">&laquo;</a>";
         }
         foreach ($this->page_arr as $k => $v) {
             $_GET['page'] = $k;
@@ -94,7 +94,7 @@ class Page
         if ($this->currPage < $this->countPages) {
             $_GET['page'] = $this->currPage + 1;
             $xyUrl = $this->href . '?' . http_build_query($_GET);
-            $pageStr .= "<a href=\"{$xyUrl}\">下一页</a>";
+            $pageStr .= "<a href=\"{$xyUrl}\">&raquo;</a>";
         }
         $_GET['page'] = $this->countPages;
         $shaDoweUrl = $this->href . '?' . http_build_query($_GET);
