@@ -32,8 +32,11 @@ function callback() {
     loading(false);
     $('.article').click(function () {
         var inst = new mdui.Dialog('.mdui-dialog');
-        $('.mdui-dialog-content span').html($(this).find('.lk-panel-body').html());
+        // Content
+        $('.mdui-dialog-content .span').html($(this).find('.lk-panel-body').html());
+        // Author
         $('.mdui-dialog-content .dialog-footer').html($(this).find('.lk-panel-foot').html());
+        // TODO Comment
         inst.open();
     });
     $('.page a').click(function(e) {

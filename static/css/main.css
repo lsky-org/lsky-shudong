@@ -203,7 +203,10 @@ footer {
     border-top: 1px solid #f0f0f0;
     margin-top: 10px;
     padding-top: 10px;
+    overflow: hidden;
 }
+.comment .mdui-textfield { padding-top: 0; }
+.comment .mdui-dialog-content { padding: 24px 24px 10px 24px; }
 a, a:hover, a:focus, a:active { text-decoration: none; color: #333; }
 a { -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all 0.2s; -o-transition: all 0.2s; transition: all 0.2s; }
 .boy { background: #66baff; }
