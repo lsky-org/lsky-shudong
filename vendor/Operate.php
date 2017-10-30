@@ -149,9 +149,34 @@ class Operate
         return preg_replace($pattern_array, $replace_array, $content);
     }
 
-    public static function param($param)
+    /**
+     * 判断当前是否为post请求
+     * @return bool
+     */
+    public static function isPost()
     {
+        return isset($_SERVER['REQUEST_METHOD']) && !strcasecmp($_SERVER['REQUEST_METHOD'], 'POST');
+    }
 
+    /**
+     * 获取请求值
+     * @param null $param 请求值
+     * @param string $method 请求类型  post或get
+     * @param bool $value 默认值
+     * @return bool
+     */
+    public static function param($param = null, $method = 'POST', $value = false)
+    {
+        if($param) {
+            if(strtolower($method) == 'post') {
+                return $param ? (isset($_POST[$param]) ? addslashes($_POST[$param]) : $value) : $_POST;
+            } elseif (strtolower($method) == 'get') {
+                return $param ? (isset($_GET[$param]) ? addslashes($_GET[$param]) : $value) : $_GET;
+            }
+        } else {
+            return strtolower($method) == 'post' ? $_POST : $_GET;
+        }
+        return false;
     }
 
 }

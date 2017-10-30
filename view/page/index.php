@@ -3,7 +3,7 @@
     <?php if(count($list) > 0) { ?>
     <?php foreach($list as $value) { ?>
         <div class="mdui-col-md-3 mdui-col-sm-4">
-            <div class="article lk-hover">
+            <div data-id="<?php echo $value['id'] ?>" class="article lk-hover">
                 <div class="lk-panel-body
                 <?php switch ($value['sex']) {
                     case 0: echo '';

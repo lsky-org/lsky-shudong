@@ -38,7 +38,7 @@ function callback() {
         $('.mdui-dialog-content .dialog-footer').html($(this).find('.lk-panel-foot').html());
         // Comment
         loading(true);
-        $('.comment').load('', {'action': 'comment'}, function() {
+        $('.comment').load('', {'action': 'comment', 'mod': 'getCommentList', 'id': $(this).attr('data-id')}, function() {
             inst.open();
             loading(false);
         });

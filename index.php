@@ -11,11 +11,6 @@
 
 define('LSKY', 'LSKY');
 
-$action = isset($_POST['action']) ? $_POST['action'] : false;
-$post_type = isset($_POST['type']) ? $_POST['type'] : 'index';
-$get_type = isset($_GET['type']) ? $_GET['type'] : false;
-$page = isset($_GET['page']) ? $_GET['page'] : 1;
-
 $config = require './config.php';
 
 // 静态操作类
@@ -32,6 +27,11 @@ require './vendor/Query.php';
 
 // 实例化数据库
 $db = new Query(DB_NAME);
+
+$action = Operate::param('action');
+$post_type = Operate::param('type', 'POST', 'index');
+$get_type = Operate::param('type', 'GET');
+$page = Operate::param('page', 'GET', 1);
 
 // 每页显示数量
 $page_size = 12;
@@ -111,7 +111,16 @@ if($get_type) {
 
 // Comment
 if($action == 'comment') {
-    // TODO 获取评论
+    $mod = Operate::param('mod');
+    if($mod == 'getCommentList') {
+        $id = Operate::param('id');
+        if(!empty($id) && is_numeric($id)) {
+            $comment_list = $db->table('comment')
+                ->where("comment_id = {$id}")
+                ->limit("0, 5")
+                ->select();
+        }
+    }
 }
 
 // 加载视图

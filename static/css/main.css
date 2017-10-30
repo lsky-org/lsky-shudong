@@ -314,6 +314,12 @@ a { -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all
     margin-top: 6px;
     border-top: 1px solid #f0f0f0;
 }
+.comment h3 {
+    border-top: 1px solid #f0f0f0;
+    text-align: center;
+    padding-top: 25px;
+    margin: 10px 0 0;
+}
 .animated {
     -webkit-animation-fill-mode: both;
     -moz-animation-fill-mode: both;
