@@ -13,7 +13,7 @@
                 <em>#<?php echo $item + 1 ?></em>
             </div>
             <div class="comment-text">
-                <?php Operate::face($config['face'], htmlspecialchars($value['content'])) ?>
+                <?php echo Operate::face($config['face'], htmlspecialchars($value['content'])) ?>
             </div>
         </div>
     </div>
