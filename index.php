@@ -109,5 +109,10 @@ if($get_type) {
     }
 }
 
+// Comment
+if($action == 'comment') {
+    // TODO 获取评论
+}
+
 // 加载视图
 require "./view/". ($action ? "page/{$action}" : "index") . ".php";

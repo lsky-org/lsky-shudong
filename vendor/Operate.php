@@ -149,4 +149,9 @@ class Operate
         return preg_replace($pattern_array, $replace_array, $content);
     }
 
+    public static function param($param)
+    {
+
+    }
+
 }
