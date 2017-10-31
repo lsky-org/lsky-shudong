@@ -109,19 +109,5 @@ if($get_type) {
     }
 }
 
-// Comment
-if($action == 'comment') {
-    $mod = Operate::param('mod');
-    if($mod == 'getCommentList') {
-        $id = Operate::param('id');
-        if(!empty($id) && is_numeric($id)) {
-            $comment_list = $db->table('comment')
-                ->where("comment_id = {$id}")
-                ->limit("0, 5")
-                ->select();
-        }
-    }
-}
-
 // 加载视图
 require "./view/". ($action ? "page/{$action}" : "index") . ".php";
