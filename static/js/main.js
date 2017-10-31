@@ -62,7 +62,7 @@ function callback() {
                 if(res.code == 1) {
                     msg(res.msg, function() {
                         $('#index').click();
-                    });
+                    }, 2500);
                 } else if (res.code == 2) {
                     mdui.alert(res.msg);
                 } else {
@@ -86,8 +86,9 @@ function callback() {
         insertAtCursor(document.getElementById('content'), $(this).attr('data-value'));
     });
 }
-function msg(message, callback) {
+function msg(message, callback, timeout) {
     return mdui.snackbar({
+        timeout: timeout ? timeout : 4000,
         message: message,
         position: 'right-top',
         onClose: callback ? callback : function() {

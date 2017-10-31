@@ -4,7 +4,7 @@
         <div class="mdui-col-md-8 mdui-col-sm-8">
             <div class="textfield">
                 <h2>你想说的话</h2>
-                <textarea rows="5" id="content" name="content" placeholder="你想说的话" required></textarea>
+                <textarea rows="5" id="content" name="content" placeholder="你想说的话(限制1000个字符)" maxlength="1000" required></textarea>
                 <div class="kind">
                     <div class="face">
                         <a class="mdui-typo-caption-opacity mdui-ripple" href="javascript:void(0)">
@@ -12,8 +12,7 @@
                         </a>
                         <div class="face-fixed face-fade none">
                             <?php foreach ($config['face'] as $value) { ?>
-                                <a data-value="{face:<?php echo $value ?>}" title="<?php echo $value ?>"
-                                   href="javascript:void(0)">
+                                <a data-value="{face:<?php echo $value ?>}" title="<?php echo $value ?>" href="javascript:void(0)">
                                     <img src="./static/images/face/<?php echo $value ?>.png">
                                 </a>
                             <?php } ?>
