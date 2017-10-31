@@ -205,8 +205,6 @@ footer {
     padding-top: 10px;
     overflow: hidden;
 }
-.comment .mdui-textfield { padding-top: 0; }
-.comment .mdui-dialog-content { padding: 24px 24px 10px 24px; }
 a, a:hover, a:focus, a:active { text-decoration: none; color: #333; }
 a { -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all 0.2s; -o-transition: all 0.2s; transition: all 0.2s; }
 .boy { background: #66baff; }
@@ -269,57 +267,6 @@ input, textarea { -webkit-appearance: none; }
 }
 .face-fixed a:hover {
     background-color: rgba(153, 153, 153, 0.2);
-}
-.comment .comment-list {
-    position: relative;
-    border-top: 1px solid #f0f0f0;
-    margin-top: 15px;
-}
-.comment .comment-author {
-    margin: 6px 0;
-    float: left;
-    font-size: 0;
-    display: block;
-}
-.comment .comment-author img {
-    width: 45px;
-}
-.comment .comment-content {
-    display: inline-block;
-    min-height: 50px;
-    margin-left: 8px;
-    max-width: calc(100% - 63px);
-}
-.comment .comment-label {
-    font-size: 15px;
-    margin: 5px 0 2px;
-}
-.comment .comment-label span {
-    line-height: 20px;
-    font-size: 11px;
-    padding: 2px 5px;
-    border-radius: 3px;
-    color: #ffffff;
-    background: #2196F3;
-}
-.comment .comment-label em {
-    float: right;
-}
-.comment .comment-text {
-    margin: 0;
-    font-size: 16px;
-    word-wrap: break-word;
-}
-.comment .comment-textarea {
-    clear: both;
-    margin-top: 6px;
-    border-top: 1px solid #f0f0f0;
-}
-.comment h3 {
-    border-top: 1px solid #f0f0f0;
-    text-align: center;
-    padding-top: 25px;
-    margin: 10px 0 0;
 }
 .animated {
     -webkit-animation-fill-mode: both;
