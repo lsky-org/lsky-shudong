@@ -4,6 +4,13 @@
 <head>
     <meta charset="utf-8">
     <title>兰空树洞 一个存放小秘密的地方</title>
+
+    <!-- IOS -->
+    <link rel="apple-touch-icon" href="./favicon.ico">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-title" content="兰空图床">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="keywords" content="兰空,兰空树洞,树洞,小秘密,表白,日记,表白墙">
     <meta name="description" content="心中的小秘密不敢说出来吗？有困扰没地方发泄吗？在这里痛快的解决吧！">
