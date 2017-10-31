@@ -306,7 +306,7 @@ input, textarea { -webkit-appearance: none; }
 }
 
 @media screen and (max-width: 768px) {
-    .face-fixed { width: 250px; max-height: 250px; }
+    .face-fixed { width: 210px; max-height: 250px; }
     .page a, .page a:focus { margin: 0 3px; padding: 4px 9px; }
 }
 
