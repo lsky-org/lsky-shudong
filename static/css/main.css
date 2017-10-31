@@ -248,7 +248,7 @@ input, textarea { -webkit-appearance: none; }
 .face-fixed {
     position: absolute;
     overflow-y: auto;
-    width: 470px;
+    width: 456px;
     z-index: 1;
     background: #fff;
     padding: 10px;
