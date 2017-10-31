@@ -78,7 +78,7 @@ $pageno = new Page($total, 3, $page, $page_size);
 
 if($get_type) {
     if($get_type == 'send') {
-        $ip = Operate::getIp();
+        $ip = Operate::getIp(0, true);
         $time = time();
         $count = count($db->table('article')->where("ip = '{$ip}' AND " . 'send_time > ' . strtotime(date('Y-m-d', $time)))->select());
         if($count >= 3) {
