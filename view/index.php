@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <title>兰空树洞 一个存放小秘密的地方</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="keywords" content="兰空,兰空树洞,树洞,小秘密,表白,日记,表白墙">
     <meta name="description" content="心中的小秘密不敢说出来吗？有困扰没地方发泄吗？在这里痛快的解决吧！">
     <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/mdui/0.3.0/css/mdui.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/pace/1.0.2/themes/black/pace-theme-flash.min.css">
@@ -29,9 +29,6 @@
         <div class="mdui-dialog-content">
             <span class="span"></span>
             <div class="dialog-footer"></div>
-            <div class="comment">
-                <!--Comment List-->
-            </div>
         </div>
     </div>
     <footer>

@@ -214,6 +214,7 @@ a { -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -ms-transition: all
 .span { letter-spacing: 1px; word-wrap: break-word; }
 .text-center { text-align: center; }
 .none { display: none; }
+input, textarea { -webkit-appearance: none; }
 .loading-shade {
     position: fixed;
     display: none;
