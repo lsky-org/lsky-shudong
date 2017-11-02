@@ -14,7 +14,7 @@
                         break;
                 } ?>">
                     <span class="span">
-                        <?php echo Operate::face($config['face'], htmlspecialchars($value['content'])) ?>
+                        <?php echo Operate::face($config['face'], Operate::filter(htmlspecialchars($value['content']), $config['blacklist'])) ?>
                     </span>
                 </div>
                 <div class="lk-panel-foot">

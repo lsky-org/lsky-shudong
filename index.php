@@ -87,7 +87,7 @@ if($get_type) {
         $data = Operate::trimArray($_POST);
         // 处理数据  过滤字符串、防注入
         foreach ($data as $item => &$value) {
-            $data[$item] = Operate::filter(addslashes($value), $config['blacklist']);
+            $data[$item] = addslashes($value);
             // 判断是否有字段为空，否则直接退出
             if(empty($data[$item])) {
                 break;
