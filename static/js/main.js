@@ -131,10 +131,3 @@ function insertAtCursor(myField, myValue) {
         myField.focus();
     }
 }
-var _hmt = _hmt || [];
-(function() {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?7be421aec78001f4da85d09a7ac03bab";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();
