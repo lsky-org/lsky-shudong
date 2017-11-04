@@ -11,7 +11,11 @@
 
 define('LSKY', 'LSKY');
 
-$config = require './config.php';
+// 数据库配置
+require './config/db.php';
+
+// 其他配置
+$config = require './config/config.php';
 
 // 静态操作类
 require './vendor/Operate.php';
