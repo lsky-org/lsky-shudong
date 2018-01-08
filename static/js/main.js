@@ -53,24 +53,15 @@ function callback() {
     });
     $('form').submit(function(e) {
         e.preventDefault();
-        $.ajax({
-            url: '?type=send',
-            type: 'POST',
-            data: $(this).serialize(),
-            dataType: 'JSON',
-            success: function(res) {
-                if(res.code == 1) {
-                    msg(res.msg, function() {
-                        $('#index').click();
-                    }, 2500);
-                } else if (res.code == 2) {
-                    mdui.alert(res.msg);
-                } else {
-                    msg(res.msg);
-                }
-            },
-            error: function() {
-                msg('请求异常，请稍后重试');
+        ajax('?type=send', $(this).serialize(), function (res) {
+            if(res.code == 1) {
+                msg(res.msg, function() {
+                    $('#index').click();
+                }, 2500);
+            } else if (res.code == 2) {
+                mdui.alert(res.msg);
+            } else {
+                msg(res.msg);
             }
         });
     });
@@ -85,49 +76,4 @@ function callback() {
     $('.face .face-fixed a').click(function () {
         insertAtCursor(document.getElementById('content'), $(this).attr('data-value'));
     });
-}
-function msg(message, callback, timeout) {
-    return mdui.snackbar({
-        timeout: timeout ? timeout : 4000,
-        message: message,
-        position: 'right-top',
-        onClose: callback ? callback : function() {
-
-        },
-    });
-}
-function loading(bool) {
-    if(bool) {
-        return $('.loading-shade').show();
-    }
-    return $('.loading-shade').hide();
-}
-function getStrToJson(str) {
-    return eval('(' + str + ')');
-}
-function insertAtCursor(myField, myValue) {
-    if (document.selection) {
-        myField.focus();
-        sel = document.selection.createRange();
-        sel.text = myValue;
-        sel.select();
-    } else if (myField.selectionStart || myField.selectionStart == '0') {
-        var startPos = myField.selectionStart;
-        var endPos = myField.selectionEnd;
-
-        // 保存滚动条
-        var restoreTop = myField.scrollTop;
-        myField.value = myField.value.substring(0, startPos) + myValue + myField.value.substring(endPos, myField.value.length);
-
-        if (restoreTop > 0) {
-            myField.scrollTop = restoreTop;
-        }
-
-        myField.focus();
-        myField.selectionStart = startPos + myValue.length;
-        myField.selectionEnd = startPos + myValue.length;
-    } else {
-        myField.value += myValue;
-        myField.focus();
-    }
 }

@@ -7,35 +7,7 @@
  * Link: http://gitee.com/wispx
  */
 
-//error_reporting(0);
-
-define('LSKY', 'LSKY');
-
-// 数据库配置
-require './config/db.php';
-
-// 其他配置
-$config = require './config/config.php';
-
-// 静态操作类
-require './vendor/Operate.php';
-
-// 分页类
-require './vendor/Page.php';
-
-// 工具方法
-require './vendor/Tool.php';
-
-// 数据库操作类
-require './vendor/Query.php';
-
-// 实例化数据库
-$db = new Query(DB_NAME);
-
-$action = Operate::param('action');
-$post_type = Operate::param('type', 'POST', 'index');
-$get_type = Operate::param('type', 'GET');
-$page = Operate::param('page', 'GET', 1);
+require __DIR__ . '/init.php';
 
 // 每页显示数量
 $page_size = 12;
@@ -85,7 +57,7 @@ if($get_type) {
         $ip = Operate::getIp(0, true);
         $time = time();
         $count = count($db->table('article')->where("ip = '{$ip}' AND " . 'send_time > ' . strtotime(date('Y-m-d', $time)))->select());
-        if($count >= 3) {
+        if($count >= $conf['publish_num']) {
             return Operate::json(2, '每天只能发表3个悄悄话哦！明天再来吧！');
         }
         $data = Operate::trimArray($_POST);

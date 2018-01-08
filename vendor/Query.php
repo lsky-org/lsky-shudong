@@ -36,7 +36,7 @@ class Query
      */
     public function field($field)
     {
-        $this->_query['field'] = "SELECT {$field}";
+        $this->_query['field'] = "SELECT '{$field}''";
         return $this;
     }
 
@@ -409,7 +409,7 @@ class Query
                     case '+=':
                         $v = substr($v, 2);
                         if (is_numeric($v)) {
-                            $fields[] = "`{$k}`=`{$k}` + $v";
+                            $fields[] = "`{$k}`=`{$k}` + '$v'";
                         } else {
                             continue;
                         }
@@ -418,13 +418,13 @@ class Query
                     case '-=':
                         $v = substr($v, 2);
                         if (is_numeric($v)) {
-                            $fields[] = "`{$k}`=`{$k}` - $v";
+                            $fields[] = "`{$k}`=`{$k}` - '$v'";
                         } else {
                             continue;
                         }
                         break;
                     default:
-                        $fields[] = "`{$k}`= $v";
+                        $fields[] = "`{$k}`= '$v'";
                 }
             }
             $field = implode(',', $fields);

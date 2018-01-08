@@ -7,19 +7,18 @@
  * Time: 19:36
  * Link: http://gitee.com/wispx
  */
-
 class Operate
 {
 
     /**
      * 获取客户端IP地址
-     * @param integer   $type 返回类型 0 返回IP地址 1 返回IPV4地址数字
-     * @param boolean   $adv 是否进行高级模式获取（有可能被伪装）
+     * @param integer $type 返回类型 0 返回IP地址 1 返回IPV4地址数字
+     * @param boolean $adv 是否进行高级模式获取（有可能被伪装）
      * @return mixed
      */
     public static function getIp($type = 0, $adv = false)
     {
-        $type      = $type ? 1 : 0;
+        $type = $type ? 1 : 0;
         static $ip = null;
         if (null !== $ip) {
             return $ip[$type];
@@ -43,7 +42,7 @@ class Operate
         }
         // IP地址合法验证
         $long = sprintf("%u", ip2long($ip));
-        $ip   = $long ? [$ip, $long] : ['0.0.0.0', 0];
+        $ip = $long ? [$ip, $long] : ['0.0.0.0', 0];
         return $ip[$type];
     }
 
@@ -56,7 +55,7 @@ class Operate
      */
     public static function trimArray($array)
     {
-        if(count($array) > 0) {
+        if (count($array) > 0) {
             foreach ($array as $key => &$val) {
                 $array[$key] = trim($val);
             }
@@ -105,7 +104,7 @@ class Operate
     public static function json($code, $msg, array $data = [])
     {
         $result = ['code' => $code, 'msg' => $msg];
-        if(count($data) > 0) $result['data'] = $data;
+        if (count($data) > 0) $result['data'] = $data;
         echo json_encode($result);
     }
 
@@ -167,8 +166,8 @@ class Operate
      */
     public static function param($param = null, $method = 'POST', $value = false)
     {
-        if($param) {
-            if(strtolower($method) == 'post') {
+        if ($param) {
+            if (strtolower($method) == 'post') {
                 return $param ? (isset($_POST[$param]) ? addslashes($_POST[$param]) : $value) : $_POST;
             } elseif (strtolower($method) == 'get') {
                 return $param ? (isset($_GET[$param]) ? addslashes($_GET[$param]) : $value) : $_GET;
