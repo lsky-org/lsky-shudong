@@ -77,9 +77,9 @@ $pageno = new Page($total, 3, $page, $page_size);
         });
     });
     $('.delete').click(function () {
+        var t = $(this);
         mdui.confirm('删除不可恢复，确定删除吗？', function() {
-            var t = $(this);
-            ajax('?type=article_delete', {id:$(this).attr('data-id')}, function (res) {
+            ajax('?type=article_delete', {id:t.attr('data-id')}, function (res) {
                 if (res.code) {
                     t.parent('td').parent('tr').remove();
                 }
